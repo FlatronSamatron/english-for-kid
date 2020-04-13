@@ -1,0 +1,156 @@
+body{
+    font-family: 'Baloo Paaji 2', cursive;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background:#f5f5f5 */
+}
+.body-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cards{
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    margin: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.card{
+    margin: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.5s;
+}
+.body{
+    background: rgba(255,93,177,1)
+}
+.cloth{
+    background: rgba(255,175,75,1)
+}
+.food{
+    background: rgba(210,255,82,1)
+}
+.sea{
+    background: rgba(212,228,239,1) 
+}
+.color{
+    background: rgba(226,226,226,1)
+}
+.figure{
+    background: rgba(73,155,234,1)
+}
+.fruit{
+    background: rgba(235,233,249,1)
+}
+.transport{
+    background: rgba(164,179,87,1)
+}
+.card img{
+    border-radius: 50%;
+    margin-top: 20px;
+    width: 180px;
+    height: 180px;
+    transition: 0.5s;
+}
+.card p{
+    font-weight: bold;
+    font-size: 30px;
+    color:#fff;
+    text-shadow: 0px 0px 5px black;
+    transition: 0.5s;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.35);
+}
+.rotate{
+    background-image: url("src/img/rotate1.png");
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    bottom: 27px;
+    right: 15px;
+    display: none;
+    transition: 0.5s;
+    transform: rotate(0deg);
+}
+.rotate:hover{
+    transform: rotate(180deg);
+}
+.menu{
+    margin-top: 50px;
+    width: 1380px;
+    display: flex;
+}
+.menu-togle{
+    margin-right: auto;
+    z-index: 2;
+    cursor: pointer;
+}
+.train-togle{
+    width: 50px;
+    height: 30px;
+    background: red;
+}
+.menu span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #e73827;
+    border-radius: 3px;
+    /* z-index: 2; */
+    transition: 0.5s;
+}
+nav{
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -300px;
+    top: 0;
+    z-index: 1;
+    transition: 0.5s;
+    font-family: 'Baloo Paaji 2', cursive;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    /* color:#fff; */
+    margin: 10px;
+    padding: 10px;
+    cursor:pointer;
+    border:1px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+}
