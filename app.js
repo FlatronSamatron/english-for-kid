@@ -61,7 +61,7 @@ const card = document.querySelectorAll('.card');
 const menu = document.querySelector('.menu-togle');
 const nav = document.querySelector('nav');
 const span = document.querySelectorAll('.menu-togle span');
-
+let aud = 0;
 menu.addEventListener('click', (e)=>{
         if(e.target.classList.contains('tog')){
             e.target.closest('div').classList.remove('tog')
@@ -118,6 +118,7 @@ function cardTopic(info){
             cards.classList.add('off')
         })
     } else {
+    aud = 0
     card.forEach((el,i)=>{
         for(let key in items){
             if(info == key){
@@ -133,8 +134,13 @@ function cardTopic(info){
             if(e.target.closest('div').classList.contains('rotate')){return}
             if(e.target.closest('div').classList.contains('off')){return}
             if(arr[i+1][2]){
-            let audio = new Audio(arr[i+1][2]);
-            audio.play();
+            if(aud == 0){
+                console.log(aud)
+                let audio = new Audio(arr[i+1][2]);
+                audio.play();
+                aud++
+                console.log(aud)
+            }
             }
         })
     })
@@ -161,7 +167,7 @@ function rotateRu(i,info){
 }
 
 function rotateEng(i){
-    console.log('rotate')
+    // console.log('rotate')
     card[i].classList.remove('trans')
     card[i].style = ''
     card[i].querySelector('p').style = ''
