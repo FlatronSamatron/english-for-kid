@@ -61,6 +61,8 @@ const card = document.querySelectorAll('.card');
 const menu = document.querySelector('.menu-togle');
 const nav = document.querySelector('nav');
 const span = document.querySelectorAll('.menu-togle span');
+const switchEl = document.querySelector('.switch');
+
 let aud = 0;
 menu.addEventListener('click', (e)=>{
         if(e.target.classList.contains('tog')){
@@ -78,7 +80,7 @@ menu.addEventListener('click', (e)=>{
             span[1].style.display = 'none'
             span[0].style.transform = 'rotate(45deg)'
             span[2].style.transform = 'rotate(-45deg)'
-            span[0].style.top = '9px'
+            span[0].style.top = '11px'
         } 
 })
 
@@ -178,6 +180,16 @@ function rotateEng(i){
 }
 
 
-// function togleMenu(info){
-//     console.log(info)
-// }
+switchEl.addEventListener('click',(e)=>{
+    const train = document.querySelector('.train')
+    const play = document.querySelector('.play')
+    if(e.target.closest('input')){
+        if(e.target.checked){
+            train.style.opacity = 0
+            play.style.opacity = 100
+        } else {
+            train.style.opacity = 100
+            play.style.opacity = 0
+        }
+    }
+})
