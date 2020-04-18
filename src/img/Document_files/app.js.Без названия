@@ -85,12 +85,6 @@ const items = {
         ['src/img/transport/transport7.png','Rocket','src/audio/transport/transport7.mp3','Ракета'],
         ['src/img/transport/transport8.png','Car','src/audio/transport/transport8.mp3','Машина']],
 }
-
-let statistic = [
-
-]
-
-
 let arr = [];
 const cards = document.querySelector('.cards');
 const card = document.querySelectorAll('.card');
@@ -106,7 +100,6 @@ const playStart = document.querySelector('.playStart')
 const result = document.querySelector('.result')
 let winCount = 0;
 let loseCount = 0;
-let playArr = [];
 
 let aud = 0;
 menu.addEventListener('click', (e)=>{
@@ -129,20 +122,6 @@ menu.addEventListener('click', (e)=>{
         } 
 })
 
-document.body.addEventListener('click', (e)=>{
-    let navi = e.target.closest('nav');
-    let menus = e.target.closest('div').classList.contains('menu-togle')
-    if(!navi && !menus){
-        menu.classList.remove('tog');
-        span.forEach(el=>el.classList.remove('tog'));
-        nav.style.left = -300 +'px';
-        span[0].style.transform = 'rotate(0deg)' ;
-        span[0].style.top = '0';
-        span[1].style.display = 'block';
-        span[2].style.transform = 'rotate(0deg)';
-    }
-})
-
 nav.addEventListener('click', (e)=>{
     let li = e.target.closest('li');
     if(li) {
@@ -161,7 +140,6 @@ nav.addEventListener('click', (e)=>{
         playStart.innerHTML = 'START GAME';
         winCount = 0;
         loseCount = 0;
-        isPlay = false
     } 
 })
 
@@ -293,13 +271,11 @@ switchEl.addEventListener('click',(e)=>{
             card.forEach(el=>{
                 el.style = ''
             })
-            isPlay = false
             result.innerHTML = ''
             playStart.classList.remove('repeat')
             playStart.innerHTML = 'START GAME'
             winCount = 0;
             loseCount = 0;
-            playArr = [];
             if(cards.classList.contains('off')){
                 cards.querySelectorAll('.card .rotate').forEach(el => el.style.display = 'none')
             } else {
@@ -311,45 +287,35 @@ switchEl.addEventListener('click',(e)=>{
 
 
 
+let playArr = [];
 
-let audio
-
-let isPlay = false;
-
-
-const clickStart = (e)=>{
-    // card.forEach(el=>{
-    //     el.style = ''
-    // })
-    // result.innerHTML = ''
+const clickStart = ()=>{
+    card.forEach(el=>{
+        el.style = ''
+    })
+    result.innerHTML = ''
     audioFalse = true
-    
+    playArr = []
     playStart.classList.add('repeat')
     playStart.innerHTML = ''
 
-    let repeat = document.body.querySelector('.playStart').classList.contains('repeat')
 
-    if(repeat && isPlay){
-        audio = new Audio(playArr[0][1])
-        audio.play();
-    } else {
-        playArr = []
-        let info = card[0].classList[1]
-        
-        card.forEach((el,i)=>{
-            info = el.classList[1]
-            for(let key in items){
-                if(info == key){
-                    playArr.push([items[key][i][1],items[key][i][2]])
-                }
+    let info = card[0].classList[1]
+    
+    card.forEach((el,i)=>{
+        info = el.classList[1]
+        for(let key in items){
+            if(info == key){
+                playArr.push([items[key][i][1],items[key][i][2]])
             }
-        })
-        playArr.sort(function(){
-            return Math.random() - 0.5;
-        })
-    }
+        }
+    })
+    playArr.sort(function(){
+        return Math.random() - 0.5;
+    })
     startGame(playArr)
 }
+
 
 playStart.onclick = clickStart
 
@@ -357,10 +323,9 @@ playStart.onclick = clickStart
 let win
 let winWord
 let audioFalse = true
-
+let audio
 
 const startGame = (playArr)=>{
-    isPlay = true
     if(audioFalse){
         audio = new Audio(playArr[0][1]);
         audioFalse = false
@@ -432,7 +397,6 @@ const endGame = ()=>{
 }
 
 const allIn = () => {
-    isPlay = false
     winCount = 0;
     loseCount = 0;
     all.style.display = 'flex'
