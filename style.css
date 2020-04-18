@@ -277,21 +277,59 @@ nav ul li {
     height: 30px;
 }
 
+.statistic{
+    display: none;
+    max-width: 1380px;
+    margin: auto;
+}
+
+.stat-info,.stat{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.word{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black
+}
+
+.listat{
+    background: #e73827;
+}
+
+.text,.translate,.clicks,.correct,.error,.errors{
+    background: rgba(255,175,75,1);
+}
+
 @media only screen and (max-width: 1455px) {
-    .menu,.result{
+    .menu,.result,.statistic{
         width: 1020px;
     }
 }
 
 @media only screen and (max-width: 1095px) {
-    .menu,.result{
+    .menu,.result,.statistic{
         width: 660px;
+    }
+    .stat-info{
+        grid-template-columns: 107px 127px 106px 107px 107px 107px; 
     }
 }
 
 @media only screen and (max-width: 735px) {
-    .menu,.result,.playStart{
+    .menu,.result,.playStart,.statistic{
         width: 300px;
+    }
+
+    .stat-info{
+        grid-template-columns: 98px 126px 17px 16px 17px 26px; 
+    }
+
+    .text,.translate,.clicks,.correct,.error,.errors{
+        writing-mode: vertical-lr;
+        background: rgba(255,175,75,1);
     }
 }
 

@@ -86,9 +86,34 @@ const items = {
         ['src/img/transport/transport8.png','Car','src/audio/transport/transport8.mp3','Машина']],
 }
 
-let statistic = [
+// let statistic = [
+//     ['Arm','Рука',0,0,0],
+//     ['Cheek','Щека',0,0,0],
+//     ['Chin','Подбородок',0,0,0],
+//     ['Leg','Нога',0,0,0],
+//     ['Lips','Губы',0,0,0],
+//     ['Neck','Шея',0,0,0],
+//     ['Hand','Ладонь',0,0,0],
+//     ['Eyes','Глаза',0,0,0],
+//     ['Belt','Ремень',0,0,0],
+//     ['Boots','Ботинки',0,0,0],
+//     ['Gloves','Перчатки',0,0,0],
+//     ['Hat','Шляпа',0,0,0],
+//     ['Shoes','Обувь',0,0,0],
+//     ['Socks','Носки',0,0,0],
+//     ['Skirt','Юбка',0,0,0],
+//     ['Mittens','Рукавицы',0,0,0],
+//     ['src/img/food/food1.png','Apple','src/audio/food/food1.mp3','Яблоко'],
+//     ['src/img/food/food2.png','Cheese','src/audio/food/food2.mp3','Сыр'],
+//     ['src/img/food/food3.png','Cookie','src/audio/food/food3.mp3','Печенье'],
+//     ['src/img/food/food4.png','Mushroom','src/audio/food/food4.mp3','Гриб'],
+//     ['src/img/food/food5.png','Hamburger','src/audio/food/food5.mp3','Гамбургер'],
+//     ['src/img/food/food6.png','Sandvich','src/audio/food/food6.mp3','Бутерброд'],
+//     ['src/img/food/food7.png','Tomato','src/audio/food/food7.mp3','Помидор'],
+//     ['src/img/food/food8.png','Soup','src/audio/food/food8.mp3','Суп']
+// ]
 
-]
+
 
 
 let arr = [];
@@ -104,9 +129,66 @@ const play = document.querySelector('.play')
 const check = document.querySelector('.check')
 const playStart = document.querySelector('.playStart')
 const result = document.querySelector('.result')
+const statLi = document.querySelector('.statistic')
 let winCount = 0;
 let loseCount = 0;
 let playArr = [];
+
+
+
+let statistic = [];
+
+for(let key in items){
+    statistic.push(items[key])
+}
+statistic.shift()
+let words = []
+
+for(let key1 of statistic){
+    for(let key2 of key1){
+        words.push(key2.filter((el,i)=>i==1 || i == 3));
+    }
+}
+
+for(let key of words){
+    key.push(0);
+    key.push(0);
+    key.push(0);
+    key.push(0);
+}
+
+const stat = document.querySelector('.stat')
+
+
+if(localStorage.getItem("eng") == null){
+    localStorage.setItem('eng', '[]')
+} else {
+    words = JSON.parse(localStorage.getItem("eng"))
+}
+
+
+let serialArr = JSON.stringify(words);
+localStorage.setItem('eng', serialArr);
+
+
+const tableRender = () =>{
+    cards.style.display = 'none'
+    statLi.style.display = 'block'
+    let serialArr = JSON.stringify(words);
+    localStorage.setItem('eng', serialArr);
+    stat.innerHTML = ''
+    words.forEach(el=>{
+        el.forEach(el =>{
+            div = document.createElement('div')
+            div.className = 'word'
+            div.innerHTML = el
+            stat.append(div)
+        })
+    })
+}
+
+
+
 
 let aud = 0;
 menu.addEventListener('click', (e)=>{
@@ -145,7 +227,27 @@ document.body.addEventListener('click', (e)=>{
 
 nav.addEventListener('click', (e)=>{
     let li = e.target.closest('li');
-    if(li) {
+    let listat = e.target.classList.contains('listat');
+    if(listat){
+        tableRender()
+        menu.classList.remove('tog');
+        span.forEach(el=>el.classList.remove('tog'));
+        nav.style.left = -300 +'px';
+        span[0].style.transform = 'rotate(0deg)' ;
+        span[0].style.top = '0';
+        span[1].style.display = 'block';
+        span[2].style.transform = 'rotate(0deg)';
+        card.forEach(el=>el.style = '');
+        result.innerHTML = '';
+        playStart.classList.remove('repeat');
+        playStart.innerHTML = 'START GAME';
+        winCount = 0;
+        loseCount = 0;
+        isPlay = false
+    }
+    if(li && !listat) {
+        cards.style.display = 'flex'
+        statLi.style.display = 'none'
         let info = e.target.closest('li').classList[0];
         cardTopic(info);
         menu.classList.remove('tog');
@@ -376,13 +478,14 @@ const startGame = (playArr)=>{
         if(!repeat){return}
         else if(div && check.checked){
             winWord = e.target.closest('div').querySelector('p').innerText
-            winWord == win ? winner(e) : lose()
+            winWord == win ? winner(e,winWord) : lose(winWord)
         }
     })
 }
 
 
-const winner = (e) => {
+const winner = (e,winWord) => {
+    winStat(winWord)
     audioFalse = true
     win = null
     playArr.shift()
@@ -398,7 +501,8 @@ const winner = (e) => {
     playArr.length == 0 ? endGame() : startGame(playArr)  
 }
 
-const lose = () => {
+const lose = (winWord) => {
+    loseStat(winWord)
     let star = document.createElement('img')
     star.src = 'src/img/lose.svg'
     result.append(star)
@@ -439,4 +543,26 @@ const allIn = () => {
     noGrac.style.display = 'none'
     grac.style.display = 'none'
     cardTopic('main')
+}
+
+const loseStat = (winWord) => {
+    words.forEach((el,i)=>{
+        el.forEach(el=>{
+            if(el == winWord){
+                words[i][4]++
+                words[i][5] = ((words[i][4] * 100)/(words[i][3]+words[i][4]))
+            }
+        })
+    })
+}
+
+const winStat = (winWord) => {
+    words.forEach((el,i)=>{
+        el.forEach(el=>{
+            if(el == winWord){
+                words[i][3]++
+                words[i][5] = ((words[i][4] * 100)/(words[i][3]+words[i][4]))
+            }
+        })
+    })
 }
