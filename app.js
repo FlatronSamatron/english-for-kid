@@ -3,14 +3,14 @@ const items = {
         ['body','Body parts','src/img/body/body0.png'],
         ['cloth','Clothing','src/img/cloth/cloth0.png'],
         ['food','Food','src/img/food/food0.png'],
-        ['sea','Sea animal','src/img/animal/animal0.png'],
+        ['sea','Sea animal','src/img/sea/sea0.png'],
         ['color','Color','src/img/color/color0.png'],
         ['figure','Figures','src/img/figure/figure0.png'],
         ['fruit','Fruits','src/img/fruit/fruit0.png'],
         ['transport','Transport','src/img/transport/trnsport0.png']
     ],
     body:[
-        ['src/img/body/body0.png','Body parts','','Тело'],
+        // ['src/img/body/body0.png','Body parts','','Тело'],
         ['src/img/body/body1.png','Arm','src/audio/body/body1.mp3','Рука'],
         ['src/img/body/body2.png','Cheek','src/audio/body/body2.mp3','Щека'],
         ['src/img/body/body3.png','Chin','src/audio/body/body3.mp3','Подбородок'],
@@ -20,7 +20,7 @@ const items = {
         ['src/img/body/body7.png','Hand','src/audio/body/body7.mp3','Ладонь'],
         ['src/img/body/body8.png','Eyes','src/audio/body/body8.mp3','Глаза']],
     cloth:[
-        ['src/img/cloth/cloth0.png','Body parts','','Тело'],
+        // ['src/img/cloth/cloth0.png','Body parts','','Тело'],
         ['src/img/cloth/cloth1.png','Belt','src/audio/cloth/cloth1.mp3','Ремень'],
         ['src/img/cloth/cloth2.png','Boots','src/audio/cloth/cloth2.mp3','Ботинки'],
         ['src/img/cloth/cloth3.png','Gloves','src/audio/cloth/cloth3.mp3','Перчатки'],
@@ -30,7 +30,7 @@ const items = {
         ['src/img/cloth/cloth7.png','Skirt','src/audio/cloth/cloth7.mp3','Юбка'],
         ['src/img/cloth/cloth8.png','Mittens','src/audio/cloth/cloth8.mp3','Рукавицы']],
     food:[
-        ['src/img/food/food0.png','Body parts','','Тело'],
+        // ['src/img/food/food0.png','Body parts','','Тело'],
         ['src/img/food/food1.png','Apple','src/audio/food/food1.mp3','Яблоко'],
         ['src/img/food/food2.png','Cheese','src/audio/food/food2.mp3','Сыр'],
         ['src/img/food/food3.png','Cookie','src/audio/food/food3.mp3','Печенье'],
@@ -39,29 +39,67 @@ const items = {
         ['src/img/food/food6.png','Sandvich','src/audio/food/food6.mp3','Бутерброд'],
         ['src/img/food/food7.png','Tomato','src/audio/food/food7.mp3','Помидор'],
         ['src/img/food/food8.png','Soup','src/audio/food/food8.mp3','Суп']],
-    // sea:{
-
-    // },
-    // color:{
-
-    // },
-    // figure:{
-
-    // },
-    // fruit:{
-
-    // },
-    // transport:{
-
-    // }
+    sea:[
+        ['src/img/sea/sea1.png','Crab','src/audio/sea/sea1.mp3','Краб'],
+        ['src/img/sea/sea2.png','Fish','src/audio/sea/sea2.mp3','Рыбка'],
+        ['src/img/sea/sea3.png','Sea horse','src/audio/sea/sea3.mp3','Морской конек'],
+        ['src/img/sea/sea4.png','Starfish','src/audio/sea/sea4.mp3','Морская звезда'],
+        ['src/img/sea/sea5.png','Jellyfish','src/audio/sea/sea5.mp3','Медуза'],
+        ['src/img/sea/sea6.png','Oyster','src/audio/sea/sea6.mp3','Устрица'],
+        ['src/img/sea/sea7.png','Shark','src/audio/sea/sea7.mp3','Акула'],
+        ['src/img/sea/sea8.png','Squid','src/audio/sea/sea8.mp3','Кальмар']],
+    color:[
+        ['src/img/color/color1.png','Black','src/audio/color/color1.mp3','Черный'],
+        ['src/img/color/color2.png','Blue','src/audio/color/color2.mp3','Синий'],
+        ['src/img/color/color3.png','Brown','src/audio/color/color3.mp3','Коричневый'],
+        ['src/img/color/color4.png','Gray','src/audio/color/color4.mp3','Серый'],
+        ['src/img/color/color5.png','Green','src/audio/color/color5.mp3','Зеленый'],
+        ['src/img/color/color6.png','Orange','src/audio/color/color6.mp3','Оранжевый'],
+        ['src/img/color/color7.png','Pink','src/audio/color/color7.mp3','Розовый'],
+        ['src/img/color/color8.png','Purple','src/audio/color/color8.mp3','Фиолетовый']],
+    figure:[
+        ['src/img/figure/figure1.png','Circle','src/audio/figure/figure1.mp3','Круг'],
+        ['src/img/figure/figure2.png','Cone','src/audio/figure/figure2.mp3','Конус'],
+        ['src/img/figure/figure3.png','Cylinder','src/audio/figure/figure3.mp3','Цылиндр'],
+        ['src/img/figure/figure4.png','Pentagon','src/audio/figure/figure4.mp3','Пятиугольник'],
+        ['src/img/figure/figure5.png','Parallelogram','src/audio/figure/figure5.mp3','Паралеллограм'],
+        ['src/img/figure/figure6.png','Sphere','src/audio/figure/figure6.mp3','Сфера'],
+        ['src/img/figure/figure7.png','Square','src/audio/figure/figure7.mp3','Квадрат'],
+        ['src/img/figure/figure8.png','Star','src/audio/figure/figure8.mp3','Звезда']],
+    fruit:[
+        ['src/img/fruit/fruit1.png','Blackberries','src/audio/fruit/fruit1.mp3','Еживика'],
+        ['src/img/fruit/fruit2.png','Blueberries','src/audio/fruit/fruit2.mp3','Черника'],
+        ['src/img/fruit/fruit3.png','Cherry','src/audio/fruit/fruit3.mp3','Черешня'],
+        ['src/img/fruit/fruit4.png','Plum','src/audio/fruit/fruit4.mp3','Слива'],
+        ['src/img/fruit/fruit5.png','Strawberry','src/audio/fruit/fruit5.mp3','Клубника'],
+        ['src/img/fruit/fruit6.png','Grapes','src/audio/fruit/fruit6.mp3','Виноград'],
+        ['src/img/fruit/fruit7.png','Grapefruit','src/audio/fruit/fruit7.mp3','Грейпфрут'],
+        ['src/img/fruit/fruit8.png','Lime','src/audio/fruit/fruit8.mp3','Лайм']],
+    transport:[
+        ['src/img/transport/transport1.png','Airplane','src/audio/transport/transport1.mp3','Самолет'],
+        ['src/img/transport/transport2.png','Bicycle','src/audio/transport/transport2.mp3','Велосипед'],
+        ['src/img/transport/transport3.png','Motorcycle','src/audio/transport/transport3.mp3','Мотоцыкл'],
+        ['src/img/transport/transport4.png','Taxi','src/audio/transport/transport4.mp3','Такси'],
+        ['src/img/transport/transport5.png','Submarine','src/audio/transport/transport5.mp3','Подводная лодка'],
+        ['src/img/transport/transport6.png','Scooter','src/audio/transport/transport6.mp3','Мопед'],
+        ['src/img/transport/transport7.png','Rocket','src/audio/transport/transport7.mp3','Ракета'],
+        ['src/img/transport/transport8.png','Car','src/audio/transport/transport8.mp3','Машина']],
 }
 let arr = [];
 const cards = document.querySelector('.cards');
 const card = document.querySelectorAll('.card');
+const cardInfo = document.querySelectorAll('.card .info');
 const menu = document.querySelector('.menu-togle');
 const nav = document.querySelector('nav');
 const span = document.querySelectorAll('.menu-togle span');
 const switchEl = document.querySelector('.switch');
+const train = document.querySelector('.train')
+const play = document.querySelector('.play')
+const check = document.querySelector('.check')
+const playStart = document.querySelector('.playStart')
+const result = document.querySelector('.result')
+let winCount = 0;
+let loseCount = 0;
 
 let aud = 0;
 menu.addEventListener('click', (e)=>{
@@ -87,21 +125,26 @@ menu.addEventListener('click', (e)=>{
 nav.addEventListener('click', (e)=>{
     let li = e.target.closest('li');
     if(li) {
-        let info = e.target.closest('li').classList[0]
-        cardTopic(info)
-        menu.classList.remove('tog')
-        span.forEach(el=>el.classList.remove('tog'))
-        nav.style.left = -300 +'px'
-        span[1].style.display = 'block'
-        span[0].style.transform = 'rotate(0deg)'
-        span[2].style.transform = 'rotate(0deg)'
-        span[0].style.top = '0'
+        let info = e.target.closest('li').classList[0];
+        cardTopic(info);
+        menu.classList.remove('tog');
+        span.forEach(el=>el.classList.remove('tog'));
+        nav.style.left = -300 +'px';
+        span[0].style.transform = 'rotate(0deg)' ;
+        span[0].style.top = '0';
+        span[1].style.display = 'block';
+        span[2].style.transform = 'rotate(0deg)';
+        card.forEach(el=>el.style = '');
+        result.innerHTML = '';
+        playStart.classList.remove('repeat');
+        playStart.innerHTML = 'START GAME';
+        winCount = 0;
+        loseCount = 0;
     } 
 })
 
 
 cards.addEventListener('click', (e)=>{
-    // let div = e.target.closest('div').classList.contains('card');
     let div = e.target.closest('div').classList.contains('card');
     let divT = e.target.closest('div').classList.contains('trans');
     if(div && !divT) {
@@ -110,16 +153,28 @@ cards.addEventListener('click', (e)=>{
     } 
 })
 
+card.forEach((el,i)=>{
+    el.querySelector('.rotate').addEventListener('click', ()=>rotateRu(i));
+}); 
+
 function cardTopic(info){
     if(info == 'main'){
+        card.forEach(el=>el.style = '');
+        result.innerHTML = '';
+        playStart.classList.remove('repeat');
+        playStart.innerHTML = 'START GAME';
         card.forEach((el,i)=>{
             el.className = 'card ' + items.main[i][0] + ' off'
             el.querySelector('p').innerText = items.main[i][1]
             el.querySelector('img').src = items.main[i][2]
             el.querySelector('.rotate').style.display = 'none'
             cards.classList.add('off')
+            cards.querySelectorAll('.card p').forEach(el => el.style.display = 'block')
+            cards.querySelectorAll('.card img').forEach(el => {el.style.marginTop = '20px'})
+            playStart.style.display = 'none'
         })
     } else {
+    cards.classList.remove('off')
     aud = 0
     card.forEach((el,i)=>{
         for(let key in items){
@@ -127,23 +182,33 @@ function cardTopic(info){
                 arr = items[key]
             }
         }
-        el.className = `card ${info}`;
-        el.querySelector('img').src = arr[i+1][0]
-        el.querySelector('p').innerText = arr[i+1][1]
-        el.querySelector('.rotate').style.display = 'block'
-        el.querySelector('.rotate').addEventListener('click', ()=>rotateRu(i,info))
+        el.className = `card ${info}`
+        el.querySelector('img').src = arr[i][0]
+        el.querySelector('p').innerText = arr[i][1]
+        if(check.checked){
+            el.querySelectorAll('.card p').forEach(el => el.style.display = 'none')
+            el.querySelectorAll('.card .rotate').forEach(el => el.style.display = 'none')
+            el.querySelector('.rotate').style.display = 'none'
+            cards.classList.add('playCard')
+            cards.querySelectorAll('.card img').forEach(el => el.style.marginTop = 0)
+            playStart.style.display = 'flex'
+        }
+        if(cards.classList.contains('playCard')){
+            el.querySelector('.rotate').style.display = 'none'
+        } else {
+            el.querySelector('.rotate').style.display = 'block'
+        }
+        // el.querySelector('.rotate').addEventListener('click', ()=>rotateRu(i,info))
         el.addEventListener('click',(e)=>{
+            if(cards.closest('div').classList.contains('playCard')){return}
             if(e.target.closest('div').classList.contains('rotate')){return}
             if(e.target.closest('div').classList.contains('off')){return}
-            if(arr[i+1][2]){
             if(aud == 0){
-                console.log(aud)
-                let audio = new Audio(arr[i+1][2]);
+                let audio = new Audio(arr[i][2]);
                 audio.play();
                 aud++
-                console.log(aud)
             }
-            }
+            
         })
     })
 }
@@ -153,15 +218,13 @@ function rotateRu(i,info){
     card[i].classList.add('trans')
     card[i].style.transform = 'rotateY(180deg)'
     card[i].querySelector('p').style.transform = 'rotateY(180deg)'
-    card[i].querySelector('p').innerHTML = arr[i+1][3]
+    card[i].querySelector('p').innerHTML = arr[i][3]
     card[i].querySelector('img').style.transform = 'rotateY(180deg)'
     card[i].querySelector('.rotate').style.display = 'none'
     cards.classList.remove('off')
-        cards.addEventListener('mouseover', (e)=>{
+        cards.onmouseover = ((e)=>{
             let div = e.target.classList.contains('cards');
-            // let off = e.target.classList.contains('off');
             let off = cards.classList.contains('off')
-            console.log(off)
             if(div && !off){
                 rotateEng(i)
             }
@@ -169,27 +232,178 @@ function rotateRu(i,info){
 }
 
 function rotateEng(i){
-    // console.log('rotate')
-    card[i].classList.remove('trans')
-    card[i].style = ''
-    card[i].querySelector('p').style = ''
-    card[i].querySelector('p').innerHTML = arr[i+1][1]
-    card[i].querySelector('img').style = ''
-    card[i].querySelector('.rotate').style.display = 'block'
-    cards.removeEventListener('mouseover', rotateEng , false)
+    if(!check.checked){
+        card[i].classList.remove('trans')
+        card[i].style = ''
+        card[i].querySelector('p').style = ''
+        card[i].querySelector('p').innerHTML = arr[i][1]
+        card[i].querySelector('img').style = ''
+        card[i].querySelector('.rotate').style.display = 'block'
+        cards.removeEventListener('mouseover', rotateEng , false)
+    }
 }
 
 
 switchEl.addEventListener('click',(e)=>{
-    const train = document.querySelector('.train')
-    const play = document.querySelector('.play')
     if(e.target.closest('input')){
         if(e.target.checked){
-            train.style.opacity = 0
-            play.style.opacity = 100
+            if(cards.classList.contains('off')){
+                train.style.opacity = 0
+                play.style.opacity = 100
+                cards.querySelectorAll('.card p').forEach(el => el.style.textShadow = '0px 0px 5px #e73827')
+                cards.querySelectorAll('.card img').forEach(el => el.style.border = '5px solid #e73827')
+            } else {
+                train.style.opacity = 0
+                play.style.opacity = 100
+                cards.querySelectorAll('.card p').forEach(el => el.style.display = 'none')
+                cards.querySelectorAll('.card .rotate').forEach(el => el.style.display = 'none')
+                cards.querySelectorAll('.card img').forEach(el => el.style.marginTop = 0)
+                cards.classList.add('playCard')
+                cards.querySelectorAll('.card img').forEach(el => el.style.border = '5px solid #e73827')
+                playStart.style.display = 'flex'
+            }
         } else {
             train.style.opacity = 100
             play.style.opacity = 0
+            cards.querySelectorAll('.card p').forEach(el => el.style.display = 'block')
+            cards.querySelectorAll('.card img').forEach(el => el.style.marginTop = '20px')
+            cards.classList.remove('playCard')
+            cards.querySelectorAll('.card p').forEach(el => el.style.textShadow = '0px 0px 5px black')
+            cards.querySelectorAll('.card img').forEach(el => el.style.border = 'solid 5px #ccc')
+            playStart.style.display = 'none'
+            card.forEach(el=>{
+                el.style = ''
+            })
+            result.innerHTML = ''
+            playStart.classList.remove('repeat')
+            playStart.innerHTML = 'START GAME'
+            winCount = 0;
+            loseCount = 0;
+            if(cards.classList.contains('off')){
+                cards.querySelectorAll('.card .rotate').forEach(el => el.style.display = 'none')
+            } else {
+                cards.querySelectorAll('.card .rotate').forEach(el => el.style.display = 'block')
+            }
         }
     }
 })
+
+
+
+let playArr = [];
+
+const clickStart = ()=>{
+    card.forEach(el=>{
+        el.style = ''
+    })
+    result.innerHTML = ''
+    audioFalse = true
+    playArr = []
+    playStart.classList.add('repeat')
+    playStart.innerHTML = ''
+
+
+    let info = card[0].classList[1]
+    
+    card.forEach((el,i)=>{
+        info = el.classList[1]
+        for(let key in items){
+            if(info == key){
+                playArr.push([items[key][i][1],items[key][i][2]])
+            }
+        }
+    })
+    playArr.sort(function(){
+        return Math.random() - 0.5;
+    })
+    startGame(playArr)
+}
+
+
+playStart.onclick = clickStart
+
+
+let win
+let winWord
+let audioFalse = true
+let audio
+
+const startGame = (playArr)=>{
+    if(audioFalse){
+        audio = new Audio(playArr[0][1]);
+        audioFalse = false
+    }
+    win = playArr[0][0]
+    audio.play();
+    document.body.onclick = ((e)=>{
+        let div;
+        if(e.target.closest('div')) {
+            div = e.target.closest('div').classList.contains('card');
+        }
+        let repeat = document.body.querySelector('.playStart').classList.contains('repeat')
+        if(!repeat){return}
+        else if(div && check.checked){
+            winWord = e.target.closest('div').querySelector('p').innerText
+            winWord == win ? winner(e) : lose()
+        }
+    })
+}
+
+
+const winner = (e) => {
+    audioFalse = true
+    win = null
+    playArr.shift()
+    let star = document.createElement('img')
+    star.src = 'src/img/win.svg'
+    result.append(star)
+    audio = new Audio('src/audio/correct.mp3');
+    audio.play();  
+    e.target.closest('div').style.pointerEvents = 'none'
+    e.target.closest('div').style.background = 'rgba(0,0,0,0.35)'
+    winCount ++ 
+    console.log(winCount)
+    playArr.length == 0 ? endGame() : startGame(playArr)  
+}
+
+const lose = () => {
+    let star = document.createElement('img')
+    star.src = 'src/img/lose.svg'
+    result.append(star)
+    audio = new Audio('src/audio/error.mp3');
+    audio.play();  
+    loseCount ++
+    console.log(loseCount)
+    startGame(playArr)                
+}
+
+
+const all = document.querySelector('.all')
+const grac = document.querySelector('.grac')
+const noGrac = document.querySelector('.no-grac')
+
+const endGame = ()=>{
+    if(loseCount>0){
+        audio = new Audio('src/audio/failure.mp3');
+        audio.play(); 
+        all.style.display = 'none'
+        noGrac.style.display = 'flex'
+        noGrac.innerHTML = `<p>${loseCount} errors</p>`
+        setTimeout(() => allIn(), 3000)
+    } else {
+        audio = new Audio('src/audio/success.mp3');
+        audio.play(); 
+        all.style.display = 'none'
+        grac.style.display = 'flex'
+        setTimeout(() => allIn(), 3000)
+    }
+}
+
+const allIn = () => {
+    winCount = 0;
+    loseCount = 0;
+    all.style.display = 'flex'
+    noGrac.style.display = 'none'
+    grac.style.display = 'none'
+    cardTopic('main')
+}
