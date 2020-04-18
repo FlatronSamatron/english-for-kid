@@ -119,6 +119,7 @@ body{
     margin-top: 50px;
     width: 1380px;
     display: flex;
+    align-items: center;
 }
 .menu-togle{
     margin-right: auto;
@@ -267,8 +268,35 @@ nav ul li {
 .result{
     height: 30px;
     width: 100%;
-    /* background: #e73827; */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.result img {
+    height: 30px;
+}
+
+@media only screen and (max-width: 1455px) {
+    .menu,.result{
+        width: 1020px;
+    }
+}
+
+@media only screen and (max-width: 1095px) {
+    .menu,.result{
+        width: 660px;
+    }
+}
+
+@media only screen and (max-width: 735px) {
+    .menu,.result,.playStart{
+        width: 300px;
+    }
+}
+
+/* @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+  } */
