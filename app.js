@@ -352,6 +352,7 @@ function cardTopic(info){
             if(e.target.closest('div').classList.contains('rotate')){return}
             if(e.target.closest('div').classList.contains('off')){return}
             if(aud == 0){
+                clickStat(arr[i][1])
                 let audio = new Audio(arr[i][2]);
                 audio.play();
                 aud++
@@ -589,6 +590,16 @@ const winStat = (winWord) => {
             if(el == winWord){
                 words[i][3]++
                 words[i][5] = ((words[i][4] * 100)/(words[i][3]+words[i][4]))
+            }
+        })
+    })
+}
+
+const clickStat = (word) => {
+    words.forEach((el,i)=>{
+        el.forEach(el=>{
+            if(el == word){
+                words[i][2]++
             }
         })
     })
