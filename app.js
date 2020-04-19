@@ -130,6 +130,9 @@ const check = document.querySelector('.check')
 const playStart = document.querySelector('.playStart')
 const result = document.querySelector('.result')
 const statLi = document.querySelector('.statistic')
+const reset = document.querySelector('.reset')
+
+
 let winCount = 0;
 let loseCount = 0;
 let playArr = [];
@@ -187,7 +190,30 @@ const tableRender = () =>{
     })
 }
 
+reset.onclick = () =>{
+    
+    let statistic = [];
 
+    for(let key in items){
+        statistic.push(items[key])
+    }
+    statistic.shift()
+    words = []
+
+    for(let key1 of statistic){
+        for(let key2 of key1){
+            words.push(key2.filter((el,i)=>i==1 || i == 3));
+        }
+    }
+
+    for(let key of words){
+        key.push(0);
+        key.push(0);
+        key.push(0);
+        key.push(0);
+    }
+    tableRender()
+}
 
 
 let aud = 0;
@@ -239,8 +265,9 @@ nav.addEventListener('click', (e)=>{
         span[2].style.transform = 'rotate(0deg)';
         card.forEach(el=>el.style = '');
         result.innerHTML = '';
-        playStart.classList.remove('repeat');
-        playStart.innerHTML = 'START GAME';
+        // playStart.classList.remove('repeat');
+        // playStart.innerHTML = 'START GAME';
+        playStart.style.display = 'none'
         winCount = 0;
         loseCount = 0;
         isPlay = false

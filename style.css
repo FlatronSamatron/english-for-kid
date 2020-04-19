@@ -303,6 +303,23 @@ nav ul li {
     background: rgba(255,175,75,1);
 }
 
+.reset{
+    display: flex;
+    width: 200px;
+    height: 50px;
+    background: #e73827;
+    border: black 1px solid;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color:#fff;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 1455px) {
     .menu,.result,.statistic{
         width: 1020px;
