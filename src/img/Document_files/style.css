@@ -1,0 +1,297 @@
+body{
+    font-family: 'Baloo Paaji 2', cursive;
+    margin: 0;
+    padding: 0;
+}
+.all{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.grac{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    display: none;
+}
+.no-grac{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    display: none;
+    color:#e73827;
+}
+.body-cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cards{
+    max-width: 1440px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card{
+    margin: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+    transition: 0.5s;
+}
+.body{
+    background: rgba(255,93,177,1)
+}
+.cloth{
+    background: rgba(255,175,75,1)
+}
+.food{
+    background: rgba(210,255,82,1)
+}
+.sea{
+    background: rgba(212,228,239,1) 
+}
+.color{
+    background: rgba(226,226,226,1)
+}
+.figure{
+    background: rgba(73,155,234,1)
+}
+.fruit{
+    background: rgba(235,233,249,1)
+}
+.transport{
+    background: rgba(164,179,87,1)
+}
+.card img{
+    border-radius: 50%;
+    margin-top: 20px;
+    width: 180px;
+    height: 180px;
+    transition: 0.5s;
+    border:solid 5px #ccc
+}
+.card p{
+    font-weight: bold;
+    font-size: 30px;
+    color:#fff;
+    text-shadow: 0px 0px 5px black;
+    transition: 0.5s;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.35);
+}
+.rotate{
+    background-image: url("src/img/rotate1.png");
+    width: 32px;
+    height: 32px;
+    background-size: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: absolute;
+    bottom: 35px;
+    right: 15px;
+    display: none;
+    transition: 0.5s;
+    transform: rotate(0deg);
+}
+.rotate:hover{
+    transform: rotate(180deg);
+}
+.menu{
+    margin-top: 50px;
+    width: 1380px;
+    display: flex;
+    align-items: center;
+}
+.menu-togle{
+    margin-right: auto;
+    z-index: 2;
+    cursor: pointer;
+}
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    border:1px solid black;
+    border-radius: 5px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 5px;
+}
+.train{
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    right: 4px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.play{
+    position: absolute;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: 0.4s;
+    z-index: 1;
+    border-radius: 5px;
+}
+input:checked + .slider {
+    background-color: #e73827;
+}
+  
+input:checked + .slider:before {
+    transform: translateX(66px);
+}
+
+
+.menu-togle span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ccc;
+    border:1px solid black;
+    border-radius: 3px;
+    /* z-index: 2; */
+    transition: 0.5s;
+}
+nav{
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: -300px;
+    top: 0;
+    z-index: 1;
+    transition: 0.5s;
+    font-family: 'Baloo Paaji 2', cursive;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    /* color:#fff; */
+    margin: 10px;
+    padding: 10px;
+    cursor:pointer;
+    border:1px solid black;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.playStart{
+    width: 500px;
+    height: 50px;
+    background-color: #e73827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    cursor:pointer;
+    border-radius:15px;
+    box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.35);
+    color:#fff;
+    font-weight: bold;
+    transition: 0.5s;
+    display: none;  
+}
+
+.playStart:hover{
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.35);
+    transition: 0.5s;
+}
+.repeat{
+    border-radius: 50%;
+    width: 50px;
+    background-image: url('src/img/repeat.svg');
+    background-repeat: no-repeat;
+    background-size: 32px 32px,cover;
+    background-position: 50%;
+}
+.result{
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.result img {
+    height: 30px;
+}
+
+@media only screen and (max-width: 1455px) {
+    .menu,.result{
+        width: 1020px;
+    }
+}
+
+@media only screen and (max-width: 1095px) {
+    .menu,.result{
+        width: 660px;
+    }
+}
+
+@media only screen and (max-width: 735px) {
+    .menu,.result,.playStart{
+        width: 300px;
+    }
+}
+
